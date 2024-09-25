@@ -1,0 +1,28 @@
+{% load static %}
+
+<header>
+    <div class="logo">
+      <a href="Login.html"></a>
+      
+      <img src="{% static 'img/Logo.png' %}" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+
+        <li><a href="{% url 'cadastro_pet' %}">cadpet</a></li>
+
+        <li><a href="{% url 'cadastro_funcionario' %}">cadFunc</a></li>
+        
+        <li><a href="{% url 'atendimento' %}">Agend</a></li>
+      </ul>
+    </nav>
+    <div class="profile">
+      <a href= "{% url 'login' %}">
+          <img src="{% static 'img/perfil.png' %}" alt="Logo">
+      </a>
+    </div>
+   
+  </header>
+
+  

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block 'title' %}Home{% endblock 'title' %}
+
+
+  {% block 'content' %}
+  {% include 'partials/navbar.html' %}
+
+    <main>
+      <div class="background-image" style="background-image:url({% static 'img/fundo.png' %})" >
+        <div class="info-container">
+          <h2>Informações das Lojas</h2>
+          <p>
+            Localização, horários de funcionamento e outras informações
+            relevantes.
+          </p>
+          <!-- Adicione mais detalhes aqui conforme necessário -->
+        </div>
+      </div>
+    </main>
+
+    
+  {% include 'partials/footer.html' %}
+  {% endblock 'content' %}
+  
+</html>

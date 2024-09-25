@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.signup-container {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+input,
+select {
+  width: calc(100% - 110px); /* Ajuste para campos menores */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.form-row {
+  margin-bottom: 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.form-row label {
+  font-weight: bold;
+  color: #555;
+  width: 100px;
+  text-align: left;
+}
+
+.submit-row {
+  margin-top: 10px;
+  /* display: flex; */
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 10px;
+  background-color: #2ba03e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* .submit-row input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-row input[type="submit"]:hover {
+  background-color: #218838;
+} */
+
+.options {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.options a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}

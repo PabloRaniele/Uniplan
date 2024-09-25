@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan.Vet - Atendimento</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/atend.css' %}">  
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-container">
+          <img style='max-width: 60px;'src="{% static 'img/Logo.png' %}" alt="Logo">
+        </div>
+        <nav class="nav-links">
+          <a href="{% url 'home' %}">Home</a>
+          <li><a href="{% url 'cadastro_pet' %}">cadpet</a></li>
+        </nav>
+        <div class="profile">
+          <a href= "{% url 'login' %}">
+              <img src="{% static 'img/perfil.png' %}" alt="Logo">
+          </a>
+      </div>
+    </header>
+
+    <div class="signup-container">
+      <h2>Procedimento</h2>
+      <form action="#" method="POST">
+        <fieldset class="module aligned">
+          <div class="form-row field-atend">
+            <label for="id_nome_proced">Procedimento:</label>
+            <input
+              type="text"
+              name="nome_proced"
+              class="vTextField"
+              maxlength="30"
+              id="id_nome_proced"
+              placeholder="Informe o procedimento"
+              required
+            />
+          </div>
+          <div class="form-row field-agend">
+            <label class="required" for="id_agend">Agendamento:</label>
+            <input
+              type="datetime-local"
+              name="agendamento"
+              id="id_agend"
+              required
+            />
+          </div>
+        </fieldset>
+        <div class="submit-row">
+          <a href="{% url 'sintomas' %}" class="btn-submit">Salvar</a>
+          <a href="{% url 'atendimento' %}" class="btn-submit">Adicionar Outro</a>
+          
+          <!-- <input
+            type="submit"
+            value="."
+            class="btn-submit"
+            name="_addanother"
+          />
+        </div> -->
+      </form>
+    </div>
+  </body>
+</html>

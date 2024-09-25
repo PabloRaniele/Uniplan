@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sintomas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/sintomas.css' %}">
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <img style='max-width: 300px;'src="{% static 'img/Logo.png' %}" alt="Logo">
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="sintoma">Nome</label>
+                <input type="text" id="sintoma" name="sintoma" required>
+            </div>
+            <div class="input-group">
+                <label for="grau_risco">Grau de Risco</label>
+                <input type="text" id="grau_risco" name="grau_risco" required>
+            </div>
+            <div class="input-group">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao">
+            </div>
+            <div class="submit-row">
+                <a href="{% url 'home' %}" class="btn-submit">Salvar</a>
+                <input
+                  type="submit"
+                  value="Salvar e adicionar outro(a)"
+                  class="btn-submit"
+                  name="_addanother"
+                />
+            <!-- <button type="submit" class="btn">Salvar</button> -->
+        </form>
+    </div>
+</body>
+</html>
