@@ -11,3 +11,5 @@ admin.site.register(Agendamento)
 admin.site.register(Sintomas)
 
 
+
+

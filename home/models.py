@@ -8,6 +8,7 @@ class Funcionario(models.Model):
     tel = models.CharField(max_length=15)
     nasc = models.DateField(blank=True, null=True)
     
+    
     def __str__(self):
         return self.nome
  

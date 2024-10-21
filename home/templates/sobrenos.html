@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Plan.Vet</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/sobrenos.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/Logo.png' %}" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <section class="sobre-nos">
+            <h1>Sobre Nós</h1>
+            <p>
+                A Plan.Vet é uma clínica veterinária dedicada ao cuidado e bem-estar dos pets, proporcionando 
+                atendimento de qualidade e soluções completas para a saúde dos animais. Nossa equipe é composta 
+                por profissionais especializados, comprometidos em oferecer um ambiente acolhedor para os animais 
+                e seus tutores. Estamos aqui para atender com dedicação e responsabilidade, promovendo saúde e 
+                bem-estar para todos os pets.
+            </p>
+
+            <!-- Botão de direcionamento -->
+            <a href="{% url 'comentarios' %}" class="btn-direcionar">Comente aqui</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Plan.Vet - Todos os direitos reservados.</p>
+            <p><a href="#">Política de Privacidade</a> | <a href="#">Contato</a></p>
+        </div>
+    </footer>
+</body>
+</html> 

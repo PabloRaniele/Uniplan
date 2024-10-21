@@ -1,0 +1,78 @@
+/* agendamentos/static/agendamentos/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* Cor do fundo do nav */
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo img {
+    height: 50px; /* Altura da logo */
+}
+
+.nav-links a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.profile img {
+    height: 50px; /* Altura da imagem de perfil */
+    border-radius: 50%; /* Deixa a imagem circular */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50; /* Cor do fundo do cabeçalho da tabela */
+    color: white;
+}
+
+footer {
+    background-color: #333; /* Cor do fundo do footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

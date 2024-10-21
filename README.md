@@ -60,3 +60,4 @@ https://www.djangoproject.com/
 https://docs.allauth.org/en/latest/installation/quickstart.html
 
 https://console.developers.google.com/
+

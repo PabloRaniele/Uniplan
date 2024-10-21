@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #4c63af; /* Cor do cabeçalho */
   }
   
@@ -44,7 +44,7 @@ body {
     /* background-image: url("img/fundo.png"); */
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,39 @@ body {
     border-radius: 10px;
     text-align: center;
   }
+
+  .container-aaa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  li {
+    display: inline-block;
+  }
+  
+  a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  a.btn:hover {
+    background-color: #45a049;
+  }
+  
   
   footer {
     background-color: #333;

@@ -17,3 +17,9 @@ def cadastro_funcio_view(request):
 
 def home_view(request):
     return render(request, 'home.html')
+
+def sobrenos_view(request):
+    return render(request, 'sobrenos.html')
+
+def comentarios_view(request):
+    return render(request, 'comentarios.html')
