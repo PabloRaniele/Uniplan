@@ -8,60 +8,81 @@
     <link rel="stylesheet" href="{% static 'css/atend.css' %}">  
   </head>
   <body>
+    <!-- Header and Navigation -->
     <header>
       <div class="header-container">
         <div class="logo-container">
-          <img style='max-width: 60px;'src="{% static 'img/Logo.png' %}" alt="Logo">
+          <img style='max-width: 60px;' src="{% static 'img/Logo.png' %}" alt="Logo">
         </div>
         <nav class="nav-links">
           <a href="{% url 'home' %}">Home</a>
           <li><a href="{% url 'cadastro_pet' %}">cadpet</a></li>
         </nav>
         <div class="profile">
-          <a href= "{% url 'login' %}">
+          <a href="{% url 'login' %}">
               <img src="{% static 'img/perfil.png' %}" alt="Logo">
           </a>
+        </div>
       </div>
     </header>
 
-    <div class="signup-container">
+    <!-- Main Content -->
+    <main class="signup-container">
       <h2>Procedimento</h2>
-      <form action="#" method="POST">
+      <form action="{% url 'atendimento' %}" method="POST">
+        {% csrf_token %}
         <fieldset class="module aligned">
+          <div class="form-row field-animal">
+            <label for="id_animal">Animal:</label>
+            <select name="animal" id="id_animal" required>
+              <option value="">Selecione o animal</option>
+              {% for animal in animais %}
+                <option value="{{ animal.id }}">{{ animal.nome_pet }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-row field-veterinario">
+            <label for="id_veterinario">Veterinário:</label>
+            <select name="veterinario" id="id_veterinario" required>
+              <option value="">Selecione o veterinário</option>
+              {% for veterinario in veterinarios %}
+                <option value="{{ veterinario.id }}">{{ veterinario.doutor }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          
+          <!-- Grau de Risco -->
+          <div class="form-row field-grau-risco">
+            <label for="id_grau_risco">Grau de Risco:</label>
+            <select name="grau_de_risco" id="id_grau_risco" required>
+              <option value="">Selecione o grau de risco</option>
+              <option value="verde">Verde</option>
+              <option value="amarelo">Amarelo</option>
+              <option value="vermelho">Vermelho</option>
+            </select>
+          </div>
+          
           <div class="form-row field-atend">
             <label for="id_nome_proced">Procedimento:</label>
-            <input
-              type="text"
-              name="nome_proced"
-              class="vTextField"
-              maxlength="30"
-              id="id_nome_proced"
-              placeholder="Informe o procedimento"
-              required
-            />
+            <input type="text" name="nome_proced" class="vTextField" maxlength="30" id="id_nome_proced" placeholder="Informe o procedimento" required />
           </div>
           <div class="form-row field-agend">
             <label class="required" for="id_agend">Agendamento:</label>
-            <input
-              type="datetime-local"
-              name="agendamento"
-              id="id_agend"
-              required
-            />
+            <input type="datetime-local" name="agendamento" id="id_agend" required />
           </div>
         </fieldset>
+      
         <div class="submit-row">
-          <a href="{% url 'sintomas' %}" class="btn-submit">Salvar</a>
+          <button type="submit" class="btn-submit">Salvar</button>
           <a href="{% url 'atendimento' %}" class="btn-submit">Adicionar Outro</a>
-          
-          <!-- <input
-            type="submit"
-            value="."
-            class="btn-submit"
-            name="_addanother"
-          />
-        </div> -->
+        </div>
       </form>
-    </div>
+      
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Plan.Vet. Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>

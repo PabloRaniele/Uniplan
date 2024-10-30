@@ -71,7 +71,7 @@ class Consulta(models.Model):
     sintomas = models.ForeignKey(Sintomas, on_delete=models.CASCADE,
                                  null=True, related_name='Consulta')
     nome_proced = models.CharField(max_length=30, default=True)
-    duracao = models.TimeField(max_length=30, null=True, blank=True)
+    duracao = models.DateTimeField(max_length=30, null=True, blank=True)
     
     grau_de_risco = models.CharField(max_length=30, null=True, blank=True,choices=Sintomas_choices, default='verde')
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)

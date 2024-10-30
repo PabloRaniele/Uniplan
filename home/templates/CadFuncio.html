@@ -3,44 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CadVeterinario</title>
+    <title>Cadastro Funcionario</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/CadFunc.css' %}">    
   </head>
   <body>
     <div class="signup-container">
-      <img style='max-width: 300px;'src="{% static 'img/Logo.png' %}" alt="Logo">
-      <h2>Cadastro Funcionario</h2>
-      <form action="#" method="POST">
+      <img style="max-width: 300px;" src="{% static 'img/Logo.png' %}" alt="Logo">
+      <h2>Cadastro Funcionário</h2>
+      <form action="" method="POST">
+        {% csrf_token %}
         <fieldset class="module aligned">
-          <div class="form-row field-nome_func">
-            <label for="id_nome_func">Nome Funcionario:</label>
+          <div class="form-row field-nome">
+            <label for="id_nome">Nome:</label>
             <input
               type="text"
-              name="nome_func"
+              name="nome"
               class="vTextField"
               maxlength="30"
-              id="id_nome_func"
-            />
-          </div>
-          <div class="form-row field-peso_Cpf">
-            <label class="required" for="id_peso_Cpf">Cpf:</label>
-            <input
-              type="number"
-              name="peso_Cpf"
-              step="any"
+              id="id_nome"
               required
-              id="id_peso_Cpf"
             />
           </div>
-          <div class="form-row field-endereço">
-            <label for="id_endereço">Endereço:</label>
+          <div class="form-row field-cpf">
+            <label class="required" for="id_cpf">CPF:</label>
             <input
               type="text"
-              name="endereço"
+              name="cpf"
               class="vTextField"
-              maxlength="2"
-              id="id_endereço"
+              maxlength="15"
+              id="id_cpf"
+              required
+            />
+          </div>
+          <div class="form-row field-endereco">
+            <label for="id_endereco">Endereço:</label>
+            <input
+              type="text"
+              name="endereco"
+              class="vTextField"
+              maxlength="30"
+              id="id_endereco"
+              required
             />
           </div>
           <div class="form-row field-sexo">
@@ -49,17 +53,34 @@
               type="text"
               name="sexo"
               class="vTextField"
-              maxlength="30"
+              maxlength="1"
               id="id_sexo"
+              required
             />
           </div>
           <div class="form-row field-telefone">
-            <label class="required" for="id_telefone">Telefone:</label>
-            <input name="telefone" id="id_telefone" />
+            <label class="required" for="id_tel">Telefone:</label>
+            <input
+              type="text"
+              name="tel"
+              class="vTextField"
+              maxlength="15"
+              id="id_tel"
+              required
+            />
+          </div>
+          <div class="form-row field-nasc">
+            <label for="id_nasc">Data de Nascimento:</label>
+            <input
+              type="date"
+              name="nasc"
+              id="id_nasc"
+              required
+            />
           </div>
         </fieldset>
         <div class="submit-row">
-          <a href="{% url 'home' %}" class="submit-row">Salvar</a>
+          <button type="submit" class="save-button">Salvar</button>
         </div>
       </form>
     </div>

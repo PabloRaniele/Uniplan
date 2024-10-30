@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CadPet</title>
+    <title>Cadastro de Pet</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/CadPet.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/CadPet.css' %}">
 </head>
-  <body>
-    <body>
-      <div class="signup-container">
-        <img style='max-width: 300px;'src="{% static 'img/Logo.png' %}" alt="Logo">
-          <h2>Criar Conta Nova</h2>
-          <form action="#" method="POST">
-              <fieldset class="module aligned">
-                  <div class="form-row field-paciente">
-                      <div>
-                          <div class="flex-container">
-                              <label  for="id_paciente">Paciente:</label>
-                              <div class="related-widget-wrapper" data-model-ref="paciente">
-                                  <input name="paciente" type="text" required id="id_paciente">
-                                     
-                 
-                                  </input>
-                                  <!-- <a class="related-widget-wrapper-link change-related" id="change_id_paciente"
-                                     data-href-template="/admin/core/paciente/__fk__/change/?_to_field=id&amp;_popup=1"
-                                     data-popup="yes"
-                                     title="Alterar paciente selecionado"><img src="/static/admin/img/icon-changelink.svg" alt="" width="20" height="20"></a>
-                                  <a class="related-widget-wrapper-link add-related" id="add_id_paciente"
-                                     data-popup="yes"
-                                     href="/admin/core/paciente/add/?_to_field=id&amp;_popup=1"
-                                     title="Adicionar outro paciente"><img src="/static/admin/img/icon-addlink.svg" alt="" width="20" height="20"></a>
-                                  <a class="related-widget-wrapper-link view-related" id="view_id_paciente"
-                                     data-href-template="/admin/core/paciente/__fk__/change/?_to_field=id"
-                                     title="Visualizar paciente selecionados"><img src="/static/admin/img/icon-viewlink.svg" alt="" width="20" height="20"></a> -->
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="form-row field-nome_pet">
-                      <div>
-                          <div class="flex-container">
-                              <label for="id_nome_pet">Nome pet:</label>
-                              <input type="text" name="nome_pet" class="vTextField" maxlength="30" id="id_nome_pet">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="form-row field-peso_pet">
-                      <div>
-                          <div class="flex-container">
-                              <label class="required" for="id_peso_pet">Peso pet:</label>
-                              <input type="number" name="peso_pet" step="any" required id="id_peso_pet">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="form-row field-idade_pet">
-                      <div>
-                          <div class="flex-container">
-                              <label for="id_idade_pet">Idade pet:</label>
-                              <input type="text" name="idade_pet" class="vTextField" maxlength="2" id="id_idade_pet">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="form-row field-raca_pet">
-                      <div>
-                          <div class="flex-container">
-                              <label for="id_raca_pet">Raça pet:</label>
-                              <input type="text" name="raca_pet" class="vTextField" maxlength="30" id="id_raca_pet">
-                          </div>
-                      </div>
-                  </div>
-                  <div class="form-row field-tipo">
-                      <div>
-                          <div class="flex-container">
-                              <label class="required" for="id_tipo">Tipo:</label>
-                              <select name="tipo" id="id_tipo">
-                                  <option value="gato" selected>Gato</option>
-                                  <option value="cachorro">Cachorro</option>
-                                  <option value="aves">Aves</option>
-                              </select>
-                          </div>
-                      </div>
-                  </div>
-              </fieldset>
-              <div class="submit-row">
-                <a href="{% url 'sintomas' %}" class="btn-submit">Salvar</a>
-                
-          </form>
-         
-      </div>
-  </body>
-      </div>
+<body>
+    <div class="signup-container">
+        <img style='max-width: 300px;' src="{% static 'img/Logo.png' %}" alt="Logo">
+        <h2>Cadastrar Novo Pet</h2>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="module aligned">
+                <div class="form-row field-tutor">
+                    <div>
+                        <div class="flex-container">
+                            <label for="tutor">Tutor:</label>
+                            <select name="tutor" id="tutor" required>
+                                <option value="">Selecione um Tutor</option>
+                                {% for tutor in tutores %}
+                                    <option value="{{ tutor.id }}">{{ tutor.tutor_nome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row field-nome_pet">
+                    <div>
+                        <div class="flex-container">
+                            <label for="nome_pet">Nome do Pet:</label>
+                            <input type="text" name="nome_pet" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row field-peso_pet">
+                    <div>
+                        <div class="flex-container">
+                            <label class="required" for="peso_pet">Peso do Pet:</label>
+                            <input type="number" name="peso_pet" step="any" required id="peso_pet">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row field-idade_pet">
+                    <div>
+                        <div class="flex-container">
+                            <label for="idade_pet">Idade do Pet:</label>
+                            <input type="text" name="idade_pet" class="vTextField" maxlength="2" id="idade_pet">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row field-raca_pet">
+                    <div>
+                        <div class="flex-container">
+                            <label for="raca_pet">Raça do Pet:</label>
+                            <input type="text" name="raca_pet" class="vTextField" maxlength="30" id="raca_pet">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row field-tipo">
+                    <div>
+                        <div class="flex-container">
+                            <label class="required" for="tipo">Tipo:</label>
+                            <select name="tipo" id="tipo" required>
+                                <option value="gato" selected>Gato</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="aves">Aves</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="submit-row">
+                <button type='submit'>Cadastrar</button>
+            </div>
+        </form>
     </div>
-  </body>
+</body>
 </html>
